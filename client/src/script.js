@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("chargement").classList.add("hidden");
+    document.getElementById("contenu").classList.remove("hidden");
     const NodeRSA = require('node-rsa');
 
     const key = new NodeRSA({b: 512});
@@ -8,11 +10,5 @@ window.addEventListener('DOMContentLoaded', () => {
     const publicDer = key.exportKey('pkcs8-public');
     const privateDer = key.exportKey('pkcs1');
 
-    document.getElementsByName("nav-link").forEach((element) => {
-        element.addEventListener("click",() => {
-            alert(element.href)
-        })
-    })
-
-    //document.getElementById("key").innerText = privateDer
+    document.getElementById("privateKey").value = privateDer
 })
