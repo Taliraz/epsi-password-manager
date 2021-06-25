@@ -34,4 +34,4 @@ build/
 # dependencies
 client/node_modules
 client/out
-
+**/bundle.js
