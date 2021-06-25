@@ -1,3 +1,5 @@
+
+
 function navigate(path) {
     for (let element of document.getElementsByClassName("tab-pane")) {
         element.classList.remove("active");

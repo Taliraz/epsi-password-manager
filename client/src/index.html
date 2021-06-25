@@ -10,7 +10,7 @@
 <div class="loader" id="chargement"></div>
 
 <div id="contenu" class="hidden">
-    <div id="authentication" class="hidden">
+    <div id="authentication">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" data-bs-toggle="tab" href="#login" id="loginTab"
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-success">Se connecter</button>
+                        <a id="btnConnect" class="btn btn-success">Se connecter</a>
                     </fieldset>
                 </form>
             </div>
@@ -98,7 +98,7 @@
             </div>
         </div>
     </div>
-    <div class="authentifie">
+    <div id="authentifie" class="hidden">
         <table class="table table-hover">
             <thead>
             <tr>

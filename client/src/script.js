@@ -11,4 +11,14 @@ window.addEventListener('DOMContentLoaded', () => {
     const privateDer = key.exportKey('pkcs1');
 
     document.getElementById("privateKey").value = privateDer
+
+    document.getElementById("btnConnect").addEventListener("click",connect)
+
+    function connect(){
+        console.log("test")
+        let authentication = document.getElementById("authentication");
+        let authentifie = document.getElementById("authentifie");
+        authentication.classList.add("hidden")
+        authentifie.classList.remove("hidden")
+    }
 })
