@@ -6,15 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
 @RequestMapping("/secret")
 public class SecretController {
@@ -40,5 +36,12 @@ public class SecretController {
   public ResponseEntity<List<SecretDto>> getAllSecretByUser(@PathVariable String username) {
     List<SecretDto> secretDtos = secretService.getAllSecretsByUsername(username);
     return ResponseEntity.ok().body(secretDtos);
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteSecret(@PathVariable Long id){
+    secretService.deleteSecret(id);
+    log.info("Secret deleted");
+    return ResponseEntity.ok().build();
   }
 }

@@ -11,4 +11,6 @@ public interface SecretService {
   SecretDto getSecret(Long secretId);
 
   List<SecretDto> getAllSecretsByUsername(String username);
+
+  void deleteSecret(Long secretId);
 }

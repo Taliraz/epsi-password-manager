@@ -9,6 +9,8 @@ public class SecretDto {
 
   private Long id;
 
+  private String domain;
+
   private String password;
 
   private String login;
