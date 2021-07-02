@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://bootswatch.com/5/materia/bootstrap.min.css">
+</head>
+<body>
+<div id="contenu">
+    <p id="pwd" class="hidden"></p>
+    <div id="authentication">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#login" id="loginTab"
+                    onclick="navigate('login')">Connexion</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" id="registerTab" href="#register"
+                    onclick="navigate('register')">Inscription</a>
+            </li>
+        </ul>
+
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade show active" id="login">
+                <form>
+                    <fieldset>
+                        <legend>Connexion</legend>
+                        <div class="form-group row">
+                            <label for="loginConnect" class="col-sm-3 col-form-label">Identifiant</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control-plaintext" id="loginConnect"
+                                        placeholder="Entrez votre identifiant">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="passwordConnect" class="col-sm-3 col-form-label">Mot de passe</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control-plaintext" id="passwordConnect"
+                                        placeholder="Entrez votre mot de passe">
+                            </div>
+                        </div>
+                        <br>
+                        <a id="btnConnect" class="btn btn-success">Se connecter</a>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="register">
+                <form>
+                    <fieldset>
+                        <legend>Inscription</legend>
+                        <div id="formLoginId" class="form-group row">
+                            <label for="loginId" class="col-sm-3 col-form-label">Identifiant</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control-plaintext" id="loginId"
+                                       placeholder="Entrez votre identifiant" onkeyup="checkChamps()">
+                            </div>
+                            <div id="fbLoginId" class="invalid-feedback">Ce champs doit être complété</div>
+                        </div>
+                        <div id="formPassword" class="form-group row">
+                            <label for="password" class="col-sm-3 col-form-label">Mot de passe</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control-plaintext" id="password"
+                                       placeholder="Entrez votre mot de passe" onkeyup="checkChamps()">
+                            </div>
+                            <div id="fbPassword" class="invalid-feedback">Le mot de passe doit contenir au moins 8
+                                caractère, une minuscule, une majuscule et un chiffre
+                            </div>
+                        </div>
+                        <div id="formConfirmPassword" class="form-group row">
+                            <label for="confirmPassword" class="col-sm-3 col-form-label">Confirmer le mot de passe</label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control-plaintext" id="confirmPassword"
+                                       placeholder="Confirmez votre mot de passe" onkeyup="checkChamps()">
+                            </div>
+                            <div id="fbConfirmPassword" class="invalid-feedback">Les mots de passe ne correspondent
+                                pas
+                            </div>
+                        </div>
+                        <br>
+                        <button id="btnInscription" class="btn btn-success disabled">S'inscrire</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="authentifie" class="hidden">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Domaine</th>
+                <th scope="col">Identifiant</th>
+                <th scope="col">Mot de passe</th>
+                <th scope="col">Voir</th>
+                <th scope="col">Copier</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+            </thead>
+            <tbody id="secretList"></tbody>
+        </table>
+        <div>
+            <form>
+                <fieldset>
+                    <legend>Ajouter un mot de passe</legend>
+                    <div class="form-group row">
+                        <label for="domainAdd" class="col-sm-3 col-form-label">Domaine</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control-plaintext" id="domainAdd">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="loginAdd" class="col-sm-3 col-form-label">Login</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control-plaintext" id="loginAdd">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="passwordAdd" class="col-sm-3 col-form-label">Mot de passe</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control-plaintext" id="passwordAdd">
+                        </div>
+                    </div>
+                    <br>
+                    <a id="addpassword" type="submit" class="btn btn-success">Ajouter</a>
+                </fieldset>
+            </form> 
+        </div>
+    </div>
+</div>
+<script src="dom.js"></script>
+<script src="bundle.js"></script>
+<script src="https://kit.fontawesome.com/5b953391bc.js" crossorigin="anonymous"></script>
+</body>
+</html>
