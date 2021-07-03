@@ -1,6 +1,6 @@
 # Prérequis
 * Java 1.8
-* Gradle
+* Gradle 6.7
 * Mysql
 * npm
 
@@ -13,5 +13,9 @@ Se placer dans un dossier ou installer le projet
 git clone https://github.com/Taliraz/epsi-password-manager
 cd epsi-password-manager/back-encrypt
 ./gradlew bootRun
-
+cd  ../client
+npm install
+npm start
 ```
+
+
