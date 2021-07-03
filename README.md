@@ -18,4 +18,10 @@ npm install
 npm start
 ```
 
+* Le password manager est accessible sur localhost:3000
 
+# Explications
+
+* L'ensemble des secrets sont chiffrés/déchiffrés côté client ce qui permt d'avoir des communications sécurisés et une base de données ne contenant que des secrets chiffrés.
+* Le client chiffre les secrets avec le mot de passe utilisateur en chiffrement symétrique AES-256
+* Le mot de passe utilisateur est hashé en base
